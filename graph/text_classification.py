@@ -1,6 +1,7 @@
 from collections import namedtuple
 from torch.utils.data import Dataset
 from scipy.sparse import coo_matrix
+import torchtext
 from torchtext import datasets
 from .base import GraphBatcher, Batch
 import numpy as np
@@ -13,6 +14,9 @@ def get_text_classification_dataset(name='sst'):
         return datasets.SST
     elif name == 'imdb':
         return datasets.IMDB
+    elif name == 'patent':
+        return torchtext.data.TabularDataset('/content/full_patent_df.csv',"CSV",[("clm", TEXT), ("700", LABEL),
+                 ("705", LABEL), ("706", LABEL)])
     else:
         raise KeyError('invalid dataset name')
 
