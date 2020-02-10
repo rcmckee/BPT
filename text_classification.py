@@ -39,7 +39,7 @@ if config['dataset'].startswith('sst'):
     train, dev, test = get_text_classification_dataset(config['dataset']).\
         splits(TEXT, LABEL, root='./data', train_subtrees=True, fine_grained=(config['dataset'] == 'sst1'))
 else:
-    train, test = get_text_classification_dataset(config['dataset']).splits(TEXT, LABEL, root='./data')
+    train, test = get_text_classification_dataset(config['dataset']).splits(TEXT, LABEL, root='./content')
     train, dev = train.split(0.9)
 
 TEXT.build_vocab(train, dev, test, vectors=GloVe(name='840B', dim=300))
