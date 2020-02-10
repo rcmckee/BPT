@@ -16,7 +16,7 @@ dropouta: 0.3
 dropoutc: 0.5
 rel_pos: True
 
-n_epochs: 60
+n_epochs: 9
 lr: 1.e-4
 batch_size: 32
 dev_batch_size: 32
