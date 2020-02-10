@@ -1,5 +1,5 @@
 seed: 2345
-dataset: 'imdb'
+dataset: 'patent'
 graph_type: 'bpt'
 graph_attrs:
     step: 16
